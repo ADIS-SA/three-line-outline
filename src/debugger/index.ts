@@ -46,8 +46,8 @@ const cg = new CylinderGeometry(2, 2, 2, 32, 1, false)
 const tg = new TorusKnotGeometry(1, 0.1, 128, 32, 2, 3)
 
 const m = new MeshBasicMaterial({
-  transparent: true,
-  color: '#ff0000',
+  transparent: false,
+  color: 'white',
 })
 
 gui.add(m, 'opacity', 0, 1)
