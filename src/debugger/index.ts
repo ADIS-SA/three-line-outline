@@ -1,12 +1,12 @@
 import {
-  BoxBufferGeometry,
+  BoxGeometry,
   Clock,
-  CylinderBufferGeometry,
+  CylinderGeometry,
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
   Scene,
-  TorusKnotBufferGeometry,
+  TorusKnotGeometry,
   Vector2,
   WebGLRenderer,
 } from 'three'
@@ -41,16 +41,13 @@ const onResize = () => {
 onResize()
 window.addEventListener('resize', onResize)
 
-const bg = new BoxBufferGeometry(1, 1, 1)
-const cg = new CylinderBufferGeometry(1, 2, 2, 32, 1, false)
-const tg = new TorusKnotBufferGeometry(1, 0.1, 128, 32, 2, 3)
+const bg = new BoxGeometry(1, 1, 1)
+const cg = new CylinderGeometry(2, 2, 2, 32, 1, false)
+const tg = new TorusKnotGeometry(1, 0.1, 128, 32, 2, 3)
 
 const m = new MeshBasicMaterial({
   transparent: true,
-  opacity: 0.5,
-  polygonOffset: true,
-  polygonOffsetUnits: 2,
-  polygonOffsetFactor: 1,
+  color: '#ff0000',
 })
 
 gui.add(m, 'opacity', 0, 1)

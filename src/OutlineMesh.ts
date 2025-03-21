@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
-  ArrowHelper,
-  BoxBufferGeometry,
+  BoxGeometry,
   BufferAttribute,
   BufferGeometry,
-  Color,
   LineSegments,
   Mesh,
   MeshBasicMaterial,
@@ -58,7 +56,7 @@ export class OutlineMesh extends LineSegments {
     const n1Array: number[] = []
     const otherVertArray: number[] = []
 
-    const sg = new BoxBufferGeometry(0.1, 0.1, 0.1)
+    const sg = new BoxGeometry(0.1, 0.1, 0.1)
     const sm = new MeshBasicMaterial({ color: 'red' })
     for (let i = 0; i < weldedVertices.length / 3; i++) {
       const m = new Mesh(sg, sm)
